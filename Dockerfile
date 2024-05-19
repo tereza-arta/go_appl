@@ -1,9 +1,13 @@
-FROM golang:1.19
+FROM golang:1.10
 
-COPY go.mod go.sum ./
+WORKDIR $GOPATH/src/github.com/codefresh-contrib/go-sample-app
 
-RUN go mod download
+COPY . .
 
-COPY *.go ./
+RUN go get -d -v ./...
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
+RUN go install -v ./...
+
+EXPOSE 8080
+
+CMD ["go-sample-app"]
