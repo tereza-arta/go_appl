@@ -1,8 +1,7 @@
 name: Workflow one
 
 on:
-  push:
-    branches: [main]
+  workflow_call
 
 jobs:
   build:
@@ -20,3 +19,4 @@ jobs:
         
       - name: Test with the Go CLI
         run: go test
+        
