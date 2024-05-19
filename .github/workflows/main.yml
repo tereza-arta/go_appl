@@ -1,1 +1,11 @@
+name: Workflow caller
 
+on: 
+    workflow_dispatch
+
+jobs:
+  CallingFirstWorkflow:
+    uses: tereza-arta/.github/workflows/build-run-tests.yml@main
+
+  CallingSecondWorkflow:
+    uses: tereza-arta/.github/workflows/docker-build-push.yml@main
