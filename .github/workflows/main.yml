@@ -12,3 +12,6 @@ jobs:
   CallingSecondWorkflow:
     needs: CallingFirstWorkflow
     uses: tereza-arta/called/.github/workflows/docker-build-push.yml@main
+    secrets:
+      REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+      REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
