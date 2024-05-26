@@ -7,7 +7,7 @@ on:
 
 jobs:
   CallingFirstWorkflow:
-    uses: tereza-arta/.github/workflows/build-run-tests.yml@main
+    uses: tereza-arta/called/.github/workflows/build-run-tests.yml@main
 
   CallingSecondWorkflow:
-    uses: tereza-arta/.github/workflows/docker-build-push.yml@main
+    uses: tereza-arta/called/.github/workflows/docker-build-push.yml@main
