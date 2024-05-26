@@ -10,4 +10,5 @@ jobs:
     uses: tereza-arta/called/.github/workflows/build-run-tests.yml@main
 
   CallingSecondWorkflow:
+    if: ${{ success() }}
     uses: tereza-arta/called/.github/workflows/docker-build-push.yml@main
